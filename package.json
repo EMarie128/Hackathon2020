@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/EMarie128/Hackathon2020/issues"
   },
-  "homepage": "https://github.com/EMarie128/Hackathon2020#readme"
+  "homepage": "https://github.com/EMarie128/Hackathon2020#readme",
+  "dependencies": {
+    "mysql": "^2.18.1"
+  }
 }
