@@ -5,17 +5,19 @@ create table users(
     LastName varchar(255) NOT NULL,
     Email varchar(255) NOT NULL,
     BirthDate date NOT NULL,
-    UNIQUE (UserID)
+    UserPassword varchar(50) NOT NULL,
+    Height int,
+    Weight int,
+    PRIMARY KEY (UserID)
 );
-
-ALTER TABLE users
-ADD PRIMARY KEY (UserID);
 
 create table dailyStats(
 	UserID int,
     CurrentDate date NOT NULL,
     StepsWalked int,
-    
-    FOREIGN KEY (UserID) REFERENCES user(UserID),
+    FOREIGN KEY (UserID) REFERENCES users(UserID),
     PRIMARY KEY (UserID, CurrentDate)
 );
+
+ALTER TABLE dailyStats
+ADD CaloriesIn int;
