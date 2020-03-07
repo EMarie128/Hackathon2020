@@ -5,7 +5,8 @@ function linearInterpritationLine(inputData, labelName){
             labels: inputData[1],
             datasets: [{
                 label: labelName,
-                borderColor: 'rgb(255, 159, 64)',
+                borderColor: 'rgb(75, 192, 192)',
+                borderWidth: 5,
                 data: inputData[0],
                 backgroundColor: 'rgb(0, 0, 0, 0)',
                 fill: false,
@@ -53,17 +54,19 @@ function linearInterpritationLineTwoSets(inputData, labelName){
             labels: inputData[1],
             datasets: [{
                 label: "Your " + labelName,
-                borderColor: 'rgb(255, 159, 64)',
+                borderColor: 'rgb(255, 99, 132)',
+                borderWidth: 5,
                 data: inputData[0],
-                backgroundColor: 'rgb(0, 0, 0, 0)',
+                backgroundColor: 'rgb(255, 99, 132)',
                 fill: false,
                 lineTension: 0
             },
             {
                 label: "Average " + labelName,
-                borderColor: 'rgb(255, 159, 64)',
+                borderColor: 'rgb(75, 192, 192)',
+                borderWidth: 5,
                 data: inputData[2],
-                backgroundColor: 'rgb(0, 0, 0, 0)',
+                backgroundColor: 'rgb(75, 192, 192)',
                 fill: false,
                 lineTension: 0
             }
