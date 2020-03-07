@@ -1,3 +1,4 @@
+	<!-- Template from : https://colorlib.com/wp/template/medical/ -->
 	<!DOCTYPE html>
 	<html lang="zxx" class="no-js">
 	<head>
@@ -41,7 +42,7 @@
 							<div class="main-menubar d-flex align-items-center">
 								<nav class="hide">
 									<a href="#home">Home</a>
-									<a href="#features">Features</a>
+									<a href="login.html">Login</a>
 									<a href="#signUp">Sign Up</a>
 									<a href="#founders">Founders</a>
 								</nav>
@@ -63,9 +64,9 @@
 									Your way.
 								</h1>
 								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore  et dolore magna aliqua.
+									Health Helper is an easy and effective tool to get your health and wellness on track. Sign up today and feel better tomorrow.
 								</p>
-								<button class="primary-btn2 mt-20 text-uppercase ">Sign Up<span class="lnr lnr-arrow-right"></span></button>
+								<a href="#signUp"><button class="primary-btn2 mt-20 text-uppercase ">Sign Up<span class="lnr lnr-arrow-right"></span></button></a>
 							</div>
 							<div class="col-lg-6 d-flex align-self-end img-right">
 								<img class="img-fluid" src="img/header-img.png" alt="">
@@ -79,74 +80,54 @@
 			<section class="feature-area section-gap" id="features">
 				<div class="container">
 					<div class="row">
-						<div class="col-lg-6">
+						<!-- <div class="col-lg-6">
 							<div class="single-feature d-flex flex-row pb-30">
 								<div class="icon">
 									<span class="lnr lnr-rocket"></span>
 								</div>
 								<div class="desc">
-									<h4 class="text-uppercase">24/7 emergency</h4>
+									<h4 class="text-uppercase">24/7 </h4>
 									<p>
 										inappropriate behavior is often laughed off as “boys will be boys,” <br> women face higher conduct women face higher conduct.
 									</p>
 								</div>
 							</div>
+						</div> -->
+						<div class="col-lg-6" style="width: 700px; margin: auto;">
 							<div class="single-feature d-flex flex-row pb-30">
-								<div class="icon">
-									<span class="lnr lnr-chart-bars"></span>
-								</div>
-								<div class="desc">
-									<h4 class="text-uppercase">X-Ray Service</h4>
-									<p>
-										inappropriate behavior is often laughed off as “boys will be boys,” <br> women face higher conduct women face higher conduct.
-									</p>
-								</div>
-							</div>
-							<div class="single-feature d-flex flex-row">
-								<div class="icon">
-									<span class="lnr lnr-bug"></span>
-								</div>
-								<div class="desc">
-									<h4 class="text-uppercase">Intensive Care</h4>
-									<p>
-										inappropriate behavior is often laughed off as “boys will be boys,” <br> women face higher conduct women face higher conduct.
-									</p>
-								</div>
-							</div>
-						</div>
-						<div class="col-lg-6">
-							<div class="single-feature d-flex flex-row pb-30">
-								<div class="icon">
-									<span class="lnr lnr-heart-pulse"></span>
-								</div>
-								<div class="desc">
-									<h4 class="text-uppercase">24/7 emergency</h4>
-									<p>
-										inappropriate behavior is often laughed off as “boys will be boys,” <br> women face higher conduct women face higher conduct.
-									</p>
-								</div>
-							</div>
-							<div class="single-feature d-flex flex-row pb-30">
-								<div class="icon">
-									<span class="lnr lnr-paw"></span>
-								</div>
-								<div class="desc">
-									<h4 class="text-uppercase">X-Ray Service</h4>
-									<p>
-										inappropriate behavior is often laughed off as “boys will be boys,” <br> women face higher conduct women face higher conduct.
-									</p>
-								</div>
-							</div>
-							<div class="single-feature d-flex flex-row">
-								<div class="icon">
-									<span class="lnr lnr-users"></span>
-								</div>
-								<div class="desc">
-									<h4 class="text-uppercase">Intensive Care</h4>
-									<p>
-										inappropriate behavior is often laughed off as “boys will be boys,” <br> women face higher conduct women face higher conduct.
-									</p>
-								</div>
+								<span>
+									<div class="icon">
+										<span class="lnr lnr-heart-pulse"></span>
+									</div>
+									<div class="desc">
+										<h4 class="text-uppercase">Keep Track</h4>
+										<p>
+											Let us help you keep track of your health and overall wellness.
+										</p>
+									</div>								
+								</span>
+								<span>
+									<div class="icon">
+										<span class="lnr lnr-chart-bars"></span>
+									</div>
+									<div class="desc">
+										<h4 class="text-uppercase">Informative</h4>
+										<p>
+											Get access to graphical analytic descriptions of your health.
+										</p>
+									</div>								
+								</span>
+								<span>
+									<div class="icon">
+										<span class="lnr lnr-users"></span>
+									</div>
+									<div class="desc">
+										<h4 class="text-uppercase">Compare Stats</h4>
+										<p>
+											See how you compare to the average values within your area.
+										</p>
+									</div>								
+								</span>												
 							</div>
 						</div>
 					</div>
@@ -164,19 +145,34 @@
 						</div>
 						<div class="col-lg-6 col-md-12 about-right no-padding">
 							<h1>Sign Up!</h1>
-							<form class="booking-form" id="myForm" action="donate.php">
+							<form class="booking-form" id="myForm">
 								 	<div class="row">
-								 		<div class="col-lg-12 d-flex flex-column">
-							 				<input name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="form-control mt-20" required="" type="text" required>
-								 		</div>
-							 			<div class="col-lg-12 d-flex flex-column">
-											<input name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" class="form-control mt-20" required="" type="text" required>
+										<div class="col-lg-12 d-flex flex-column">
+											<input id="first" name="firstName" placeholder="First Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'First Name'" class="form-control mt-20" required="" type="text" required>
 										</div>
 										<div class="col-lg-12 d-flex flex-column">
-											<input name="confirmPassword" placeholder="Confirm password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'" class="form-control mt-20" required="" type="text" required>
+											<input id="last" name="lastName" placeholder="Last Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Last Name'" class="form-control mt-20" required="" type="text" required>
 										</div>
+								 		<div class="col-lg-12 d-flex flex-column">
+							 				<input id="email" name="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'" class="form-control mt-20" required="" type="text" required>
+								 		</div>
+							 			<div class="col-lg-12 d-flex flex-column">
+											<input id="password" type="password" name="password" placeholder="Password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'" class="form-control mt-20" required="" type="text" required>
+										</div>
+										<div class="col-lg-12 d-flex flex-column">
+											<input id="confirmPass" type="password" name="confirmPassword" placeholder="Confirm password" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Confirm Password'" class="form-control mt-20" required="" type="text" required>
+										</div>
+										<div class="col-lg-12 d-flex flex-column">
+											<input id="date" type="date" max="2020-03-07" name="birthday" placeholder="Birthday" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Birthday'" class="form-control mt-20" required="" type="text" required>
+										</div>										
 										<div class="col-lg-12 d-flex justify-content-end send-btn">
-											<button class="submit-btn primary-btn mt-20 text-uppercase ">Track my health<span class="lnr lnr-arrow-right"></span></button>
+											<button id="signUp">Sign Up</button>
+											<script>
+												document.getElementById('signUp').addEventListener('click', function(){
+													console.log("button clicked");
+
+												});
+											</script></span>
 										</div>
 
 										<div class="alert-msg"></div>
@@ -196,7 +192,7 @@
 						<div class="col-md-8 pb-80 header-text">
 							<h1>Our Founders</h1>
 							<p>
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut <br> labore  et dolore magna aliqua.
+								Our founders started Health Helper in March of 2020 to help people like you live a better life.
 							</p>
 						</div>
 					</div>

@@ -38,7 +38,11 @@ function addDaily(day){
   });
 }
 
+function signup(){
+
+}
+
 // let per = [9999, '2020-09-08', 15600 ,5000,23];
 // addDaily(per);
 
-export {addUser};
+// export {addUser, signup};
