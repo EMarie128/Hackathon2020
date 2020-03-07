@@ -1,6 +1,7 @@
+let entries = [];
 function populate(num){
-    let entries = [];
-    let fNamels = ["Wallace","Emily","Mat","Arron","Alice","Bobby","Beth","Cate","Charly","Dalton","Dina","Erin","Eva","Franklin","Felicia","Gary","Gwen","Henry","Hellen","Isabel","Ivan","Jason","Jen","Karl","Katie","Luis","Lauren","Marty","Monica","Owen","Oliva","Patric","Patricia","Quin","Robert","Rose","Steven","Sara","Terry","Talya","Ustof","Uriel","Vince", "Violet", "Wilma"];
+    
+    let fNames = ["Wallace","Emily","Mat","Arron","Alice","Bobby","Beth","Cate","Charly","Dalton","Dina","Erin","Eva","Franklin","Felicia","Gary","Gwen","Henry","Hellen","Isabel","Ivan","Jason","Jen","Karl","Katie","Luis","Lauren","Marty","Monica","Owen","Oliva","Patric","Patricia","Quin","Robert","Rose","Steven","Sara","Terry","Talya","Ustof","Uriel","Vince", "Violet", "Wilma"];
     let lNames = ["Alester", "Boris", "Coleman", "Davidson", "Ericson", "Falmer", "Gamer", "Hall", "Igris", "Jacobson", "Karrison", "Law", "Martin", "Nobody", "Owens", "Perry", "Quiter", "Roberts", "Stencils", "Terance", "Ulfrik", "Vance", "Wallace","Xero"];
     for(let i = 0; i < num; i++){
         let year = Math.floor(Math.random() * 75 + 1940);
@@ -13,7 +14,23 @@ function populate(num){
         let x = [i, fNames[Math.floor(Math.random() * fNames.length)], fNames[Math.floor(Math.random() * fNames.length)], lname, lname + i.toString() + "@hawtmail.hot", bDay, "Password", height, weight];
         entries[i] = x;
         console.log(x);
-        //addUser(x);
+        addUser(x);
     }
-    console.log(entries);
+    popActivity();
+}
+
+function popActivity(){
+    for(let i = 0; i < entries.length; i++){
+        for(let j = 1 ; j <= 7 ; j++){
+            let id = entries[i][0];
+            let date = "2020-03-0" + j;
+            let steps = Math.floor(Math.random() * 2000) + 1000;
+            let calIn = Math.floor(Math.random() * 2000) + 1000;
+            let sleep = Math.floor(Math.random() * 6) + 4;
+            let mood = Math.floor(Math.random() * 9) + 1;
+            let x = [id, date, steps, calIn, sleep, mood];
+            console.log(x);
+            addDaily(x);
+        }
+    }
 }
