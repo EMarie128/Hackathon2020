@@ -92,7 +92,7 @@
                 let lname = lNames[Math.floor(Math.random() * lNames.length)];
                 let x = [i, fNames[Math.floor(Math.random() * fNames.length)], fNames[Math.floor(Math.random() * fNames.length)], lname, lname + i.toString() + "@hawtmail.hot", bDay, "Password", height, weight];
                 entries[i] = x;
-                //console.log(x);
+                console.log(x);
                 //addUser(x);
             }
             // sessionStorage.setItem('users', entries);
@@ -127,9 +127,9 @@
         let scount = 0;
 
         for(let i = 0; i < activity.length; i++){
-            console.log(activity[i][1]);
+            //console.log(activity[i][1]);
             if (activity[i][1] == "2020-03-01"){
-                console.log("here 01")
+                //console.log("here 01")
                 if(activity[i][0] == user[0]){
                     stepsU[0] = activity[i][2];
                 }
@@ -167,7 +167,7 @@
                 steps[5] += activity[i][2];
             }
             else if(activity[i][1] == "2020-03-07"){
-                console.log("here");
+                //console.log("here");
                 if(activity[i][0] == user[0]){
                     stepsU[6] += activity[i][2];
                 }
