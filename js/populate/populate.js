@@ -27,7 +27,8 @@ function popActivity(){
             let steps = Math.floor(Math.random() * 2000) + 1000;
             let calIn = Math.floor(Math.random() * 2000) + 1000;
             let sleep = Math.floor(Math.random() * 6) + 4;
-            let x = [id, date, steps, calIn, sleep];
+            let mood = Math.floor(Math.random() * 9) + 1;
+            let x = [id, date, steps, calIn, sleep, mood];
             console.log(x);
             addDaily(x);
         }
