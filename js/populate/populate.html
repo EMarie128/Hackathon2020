@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title> Populate </title>
+    <script src="../dbActions.js"></script>
+    <script src="populate.js"></script>
+	<style>
+		canvas {
+			-moz-user-select: none;
+			-webkit-user-select: none;
+			-ms-user-select: none;
+		}
+	</style>
+</head>
+
+<body>
+    <button id="popButton">Populate</button>
+    <script>
+		document.getElementById('popButton').addEventListener('click', function() {
+			populate(100);
+		});
+	</script>
+</body>
+
+</html>
