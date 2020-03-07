@@ -125,6 +125,15 @@
         let stepsU = [];
         let steps = [0,0,0,0,0,0,0];
         let scount = 0;
+        
+        let calIn = [];
+        let calInU = [];
+
+        let sleep = [];
+        let sleepU = [];
+
+        let mood = [];
+        let moodU = []; 
 
         for(let i = 0; i < activity.length; i++){
             //console.log(activity[i][1]);
@@ -132,53 +141,96 @@
                 //console.log("here 01")
                 if(activity[i][0] == user[0]){
                     stepsU[0] = activity[i][2];
+                    calInU[0] = activity[i][3];
+                    sleepU[0] = activity[i][4];
+                    moodU[0] = activity[i][5];
                 }
                 steps[0] += activity[i][2];
+                calIn[0] = activity[i][3];
+                sleep[0] = activity[i][4];
+                mood[0] = activity[i][5];
                 scount++;
             }
             else if(activity[i][1] == "2020-03-02"){
                 if(activity[i][0] == user[0]){
                     stepsU[1] = activity[i][2];
+                    calInU[1] = activity[i][3];
+                    sleepU[1] = activity[i][4];
+                    moodU[1] = activity[i][5];
                 }
                 steps[1] += activity[i][2];
+                calIn[1] = activity[i][3];
+                sleep[1] = activity[i][4];
+                mood[1] = activity[i][5];
             }
             else if(activity[i][1] == "2020-03-03"){
                 if(activity[i][0] == user[0]){
                     stepsU[2] = activity[i][2];
+                    calInU[2] = activity[i][3];
+                    sleepU[2] = activity[i][4];
+                    moodU[2] = activity[i][5];
                 }
                 steps[2] += activity[i][2];
+                calIn[2] = activity[i][3];
+                sleep[2] = activity[i][4];
+                mood[2] = activity[i][5];
             }
             else if(activity[i][1] == "2020-03-04"){
                 if(activity[i][0] == user[0]){
                     stepsU[3] = activity[i][2];
+                    calInU[3] = activity[i][3];
+                    sleepU[3] = activity[i][4];
+                    moodU[3] = activity[i][5];
                 }
                 steps[3] += activity[i][2];
+                calIn[3] = activity[i][3];
+                sleep[3] = activity[i][4];
+                mood[3] = activity[i][5];
             }
             else if(activity[i][1] == "2020-03-05"){
                 if(activity[i][0] == user[0]){
                     stepsU[4] = activity[i][2];
+                    calInU[4] = activity[i][3];
+                    sleepU[4] = activity[i][4];
+                    moodU[4] = activity[i][5];
                 }
                 steps[4] += activity[i][2];
+                calIn[4] = activity[i][3];
+                sleep[4] = activity[i][4];
+                mood[4] = activity[i][5];
             }
             else if(activity[i][1] == "2020-03-06"){
                 if(activity[i][0] == user[0]){
                     stepsU[5] = activity[i][2];
+                    calInU[5] = activity[i][3];
+                    sleepU[5] = activity[i][4];
+                    moodU[5] = activity[i][5];
                 }
                 steps[5] += activity[i][2];
+                calIn[5] = activity[i][3];
+                sleep[5] = activity[i][4];
+                mood[5] = activity[i][5];
             }
             else if(activity[i][1] == "2020-03-07"){
                 //console.log("here");
                 if(activity[i][0] == user[0]){
                     stepsU[6] += activity[i][2];
+                    calInU[6] = activity[i][3];
+                    sleepU[6] = activity[i][4];
+                    moodU[6] = activity[i][5];
                 }
                 steps[6] += activity[i][2];
+                calIn[6] = activity[i][3];
+                sleep[6] = activity[i][4];
+                mood[6] = activity[i][5];
             }
         }
         for(let i = 0; i < 7; i++){
             steps[i] = steps[i]/(scount);
         }
         //steps
-        let x = [stepsU,["2020-03-01","2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07"],steps];
+        let dates = ["2020-03-01","2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07"]
+        let x = [stepsU,dates,steps];
         let y = "Steps";
 
         let config = linearInterpritationLineTwoSets(x, y);
@@ -187,7 +239,7 @@
         window.myLine = new Chart(ctx, config);
         
         //calories In
-        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        x = [calInU,dates,calIn];
         y = "Calories In";
 
         config = LineTwoSets(x, y);
@@ -196,7 +248,7 @@
         window.myLine = new Chart(ctx, config);
 
         //calories Burned
-        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        x = [[10, 20, 30, 15, 2],dates,[25, 20, 2, 35, 10]];
         y = "Calories Burned";
 
         config = LineTwoSets(x, y);
@@ -205,7 +257,7 @@
         window.myLine = new Chart(ctx, config);
 
         //Sleep
-        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        x = [sleepU,dates,sleep];
         y = "Hours of Sleep";
 
         config = linearInterpritationLineTwoSets(x, y);
@@ -214,7 +266,7 @@
         window.myLine = new Chart(ctx, config);
 
         //mood
-        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        x = [moodU,dates,mood];
         y = "Mood";
 
         config = LineTwoSets(x, y);
