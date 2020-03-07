@@ -58,24 +58,169 @@
     <br>
     <div style="width:75%;">
 		<canvas id="canvas2"></canvas>
-	</div>
+    </div>
+    <br>
+    <br>
+    <div style="width:75%;">
+		<canvas id="canvas3"></canvas>
+    </div>
+    <br>
+    <br>
+    <div style="width:75%;">
+		<canvas id="canvas4"></canvas>
+    </div>
+    <br>
+    <br>
+    <div style="width:75%;">
+		<canvas id="canvas5"></canvas>
+    </div>
     <script>
-        let x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+
+        let entries = [];
+        let activity = [];
+        
+            
+            let fNames = ["Wallace","Emily","Mat","Arron","Alice","Bobby","Beth","Cate","Charly","Dalton","Dina","Erin","Eva","Franklin","Felicia","Gary","Gwen","Henry","Hellen","Isabel","Ivan","Jason","Jen","Karl","Katie","Luis","Lauren","Marty","Monica","Owen","Oliva","Patric","Patricia","Quin","Robert","Rose","Steven","Sara","Terry","Talya","Ustof","Uriel","Vince", "Violet", "Wilma"];
+            let lNames = ["Alester", "Boris", "Coleman", "Davidson", "Ericson", "Falmer", "Gamer", "Hall", "Igris", "Jacobson", "Karrison", "Law", "Martin", "Nobody", "Owens", "Perry", "Quiter", "Roberts", "Stencils", "Terance", "Ulfrik", "Vance", "Wallace","Xero"];
+            for(let i = 0; i < 100; i++){
+                let year = Math.floor(Math.random() * 75 + 1940);
+                let month = Math.floor(Math.random() * 8)+1;
+                let day = Math.floor(Math.random() * 17)+10;
+                let bDay = year.toString() + "-0" + month.toString() + "-" + day.toString();
+                let height = Math.floor(Math.random() * 48) + 48;
+                let weight = Math.floor(Math.random() * 150) + 90;
+                let lname = lNames[Math.floor(Math.random() * lNames.length)];
+                let x = [i, fNames[Math.floor(Math.random() * fNames.length)], fNames[Math.floor(Math.random() * fNames.length)], lname, lname + i.toString() + "@hawtmail.hot", bDay, "Password", height, weight];
+                entries[i] = x;
+                //console.log(x);
+                //addUser(x);
+            }
+            // sessionStorage.setItem('users', entries);
+            // sessionStorage.setItem('currentUser', entries[0]);
+            
+        
+
+            let count = 0;
+            for(let i = 0; i < entries.length; i++){
+                
+                for(let j = 0 ; j < 7 ; j++){
+                    let id = entries[i][0];
+                    let date = "2020-03-0" + (j+1);
+                    let steps = Math.floor(Math.random() * 2000) + 1000;
+                    let calIn = Math.floor(Math.random() * 2000) + 1000;
+                    let sleep = Math.floor(Math.random() * 6) + 4;
+                    let mood = Math.floor(Math.random() * 9) + 1;
+                    let x = [id, date, steps, calIn, sleep, mood];
+                    console.log(x); 
+                    activity[count] = x;
+                    count++;
+                    //addDaily(x);
+                }
+                
+            }
+            //sessionStorage.setItem('activity', activity);
+
+        let user = entries[0];
+
+        let stepsU = [];
+        let steps = [0,0,0,0,0,0,0];
+        let scount = 0;
+
+        for(let i = 0; i < activity.length; i++){
+            console.log(activity[i][1]);
+            if (activity[i][1] == "2020-03-01"){
+                console.log("here 01")
+                if(activity[i][0] == user[0]){
+                    stepsU[0] = activity[i][2];
+                }
+                steps[0] += activity[i][2];
+                scount++;
+            }
+            else if(activity[i][1] == "2020-03-02"){
+                if(activity[i][0] == user[0]){
+                    stepsU[1] = activity[i][2];
+                }
+                steps[1] += activity[i][2];
+            }
+            else if(activity[i][1] == "2020-03-03"){
+                if(activity[i][0] == user[0]){
+                    stepsU[2] = activity[i][2];
+                }
+                steps[2] += activity[i][2];
+            }
+            else if(activity[i][1] == "2020-03-04"){
+                if(activity[i][0] == user[0]){
+                    stepsU[3] = activity[i][2];
+                }
+                steps[3] += activity[i][2];
+            }
+            else if(activity[i][1] == "2020-03-05"){
+                if(activity[i][0] == user[0]){
+                    stepsU[4] = activity[i][2];
+                }
+                steps[4] += activity[i][2];
+            }
+            else if(activity[i][1] == "2020-03-06"){
+                if(activity[i][0] == user[0]){
+                    stepsU[5] = activity[i][2];
+                }
+                steps[5] += activity[i][2];
+            }
+            else if(activity[i][1] == "2020-03-07"){
+                console.log("here");
+                if(activity[i][0] == user[0]){
+                    stepsU[6] += activity[i][2];
+                }
+                steps[6] += activity[i][2];
+            }
+        }
+        for(let i = 0; i < 7; i++){
+            steps[i] = steps[i]/(scount);
+        }
+        //steps
+        let x = [stepsU,["2020-03-01","2020-03-02","2020-03-03","2020-03-04","2020-03-05","2020-03-06","2020-03-07"],steps];
         let y = "Steps";
 
-        let config = LineTwoSets(x, y);
+        let config = linearInterpritationLineTwoSets(x, y);
         let ctx = document.getElementById('canvas').getContext('2d');
 
         window.myLine = new Chart(ctx, config);
         
+        //calories In
         x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
-        y = "Weight";
+        y = "Calories In";
 
         config = LineTwoSets(x, y);
         ctx = document.getElementById('canvas2').getContext('2d');
 
         window.myLine = new Chart(ctx, config);
 
+        //calories Burned
+        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        y = "Calories Burned";
+
+        config = LineTwoSets(x, y);
+        ctx = document.getElementById('canvas3').getContext('2d');
+
+        window.myLine = new Chart(ctx, config);
+
+        //Sleep
+        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        y = "Hours of Sleep";
+
+        config = linearInterpritationLineTwoSets(x, y);
+        ctx = document.getElementById('canvas4').getContext('2d');
+
+        window.myLine = new Chart(ctx, config);
+
+        //mood
+        x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
+        y = "Mood";
+
+        config = LineTwoSets(x, y);
+        ctx = document.getElementById('canvas5').getContext('2d');
+
+        window.myLine = new Chart(ctx, config);
 
     </script>
     			<script src="js/vendor/jquery-2.2.4.min.js"></script>

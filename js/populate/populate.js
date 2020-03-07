@@ -1,4 +1,5 @@
 let entries = [];
+let activity = [];
 function populate(num){
     
     let fNames = ["Wallace","Emily","Mat","Arron","Alice","Bobby","Beth","Cate","Charly","Dalton","Dina","Erin","Eva","Franklin","Felicia","Gary","Gwen","Henry","Hellen","Isabel","Ivan","Jason","Jen","Karl","Katie","Luis","Lauren","Marty","Monica","Owen","Oliva","Patric","Patricia","Quin","Robert","Rose","Steven","Sara","Terry","Talya","Ustof","Uriel","Vince", "Violet", "Wilma"];
@@ -14,8 +15,10 @@ function populate(num){
         let x = [i, fNames[Math.floor(Math.random() * fNames.length)], fNames[Math.floor(Math.random() * fNames.length)], lname, lname + i.toString() + "@hawtmail.hot", bDay, "Password", height, weight];
         entries[i] = x;
         console.log(x);
-        addUser(x);
+        //addUser(x);
     }
+    sessionStorage.setItem('users', entries);
+    sessionStorage.setItem('currentUser', entries[0]);
     popActivity();
 }
 
@@ -30,7 +33,9 @@ function popActivity(){
             let mood = Math.floor(Math.random() * 9) + 1;
             let x = [id, date, steps, calIn, sleep, mood];
             console.log(x);
-            addDaily(x);
+            activity[i] = x;
+            //addDaily(x);
         }
     }
+    sessionStorage.setItem('activity', activity);
 }
