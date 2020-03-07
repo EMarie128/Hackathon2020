@@ -25,7 +25,7 @@
     <script src ="GraphGenerater.js"></script>
     <script>
         let x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
-        let config = linearInterpritationLineTwoSets(x, "steps");
+        let config = LineTwoSets(x, "steps");
         var ctx = document.getElementById('canvas').getContext('2d');
 		window.myLine = new Chart(ctx, config);
     </script>
