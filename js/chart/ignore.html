@@ -4,7 +4,8 @@
 <head>
 	<title>Line Chart - Cubic interpolation mode</title>
     <script src="Chart.bundle.min.js"></script>
-    <script src="utils.js"></script>
+	<script src="utils.js"></script>
+	<script src ="GraphGenerater.js"></script>
 	
 	<style>
 	canvas{
@@ -22,7 +23,7 @@
 	<br>
 	<br>
 	<button id="randomizeData">Randomize Data</button>
-    <script src ="GraphGenerater.js"></script>
+    
     <script>
         let x = [[10, 20, 30, 15, 2],[1, 2, 3, 4, 5],[25, 20, 2, 35, 10]];
         let config = LineTwoSets(x, "steps");
