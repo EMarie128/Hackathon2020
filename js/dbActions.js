@@ -1,4 +1,4 @@
-var mysql = require('mysql');
+//var mysql = require('mysql');
 
 var con = mysql.createConnection({
   host: "35.237.246.137",
@@ -25,6 +25,20 @@ function addUser(user){
   });
 }
 
-// let per = [9999,"Mat", 'f', "Davidson", "bloosh", '1988-09-08', 'poopsicle',76,245];
-// addUser(per);
+function addDaily(day){
+  con.connect(function(err) {
+    if (err) throw err;
+    console.log("Connected!");
+    
+    var sql = "INSERT INTO dailyStats (UserID, CurrentDate, StepsWalked, CaloriesIn, HoursSlept) VALUES (?)";
+    con.query(sql, [day], function (err, result) {
+      if (err) throw err;
+      console.log("1 record inserted: ", sql);
+    });
+  });
+}
+
+// let per = [9999, '2020-09-08', 15600 ,5000,23];
+// addDaily(per);
+
 export {addUser};
