@@ -14,7 +14,7 @@ function populate(num){
         let x = [i, fNames[Math.floor(Math.random() * fNames.length)], fNames[Math.floor(Math.random() * fNames.length)], lname, lname + i.toString() + "@hawtmail.hot", bDay, "Password", height, weight];
         entries[i] = x;
         console.log(x);
-        //addUser(x);
+        addUser(x);
     }
     popActivity();
 }
@@ -29,6 +29,7 @@ function popActivity(){
             let sleep = Math.floor(Math.random() * 6) + 4;
             let x = [id, date, steps, calIn, sleep];
             console.log(x);
+            addDaily(x);
         }
     }
 }
